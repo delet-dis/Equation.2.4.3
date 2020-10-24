@@ -21,42 +21,47 @@ public class MainActivity extends AppCompatActivity {
    */
   public void solveEquation(View view) {
 	// ax+b=c
-	double a = Double.parseDouble(((EditText)
-			findViewById(R.id.coefficient_a)).getText().toString());
-	double b = Double.parseDouble(((EditText)
-			findViewById(R.id.coefficient_b)).getText().toString());
-	double c = Double.parseDouble(((EditText)
-			findViewById(R.id.coefficient_c)).getText().toString());
-	TextView result = (TextView) findViewById(R.id.result);
+	if (((EditText) findViewById(R.id.coefficient_a)).getText().toString().length() > 0 &&
+			((EditText) findViewById(R.id.coefficient_b)).getText().toString().length() > 0 &&
+			((EditText) findViewById(R.id.coefficient_c)).getText().toString().length() > 0) {
 
-	double discriminant = Math.pow(b, 2) - 4 * a * c;
-	double sqrt = Math.sqrt(discriminant);
+	  double a = Double.parseDouble(((EditText)
+			  findViewById(R.id.coefficient_a)).getText().toString());
+	  double b = Double.parseDouble(((EditText)
+			  findViewById(R.id.coefficient_b)).getText().toString());
+	  double c = Double.parseDouble(((EditText)
+			  findViewById(R.id.coefficient_c)).getText().toString());
+	  TextView result = findViewById(R.id.result);
 
-	double firstRoot;
-	double secondRoot;
+	  double discriminant = Math.pow(b, 2) - 4 * a * c;
+	  double sqrt = Math.sqrt(discriminant);
 
-	String stringResult;
+	  double firstRoot;
+	  double secondRoot;
 
-	try {
+	  String stringResult;
+
 	  if (a > 0) {
 		if (discriminant > 0.0) {
 		  firstRoot = (-b + sqrt) / (2 * a);
 		  secondRoot = (-b - sqrt) / (2 * a);
-		  stringResult = "Roots are : " + firstRoot + " and " + secondRoot;
+		  stringResult = getString(R.string.rootsAre) + firstRoot + getString(R.string.and) + secondRoot;
 		} else if (discriminant == 0) {
-		  stringResult = "Root is : " + (-b + sqrt) / (2 * a);
+		  stringResult = getString(R.string.rootIs) + (-b + sqrt) / (2 * a);
 		} else {
-		  stringResult = "No roots";
+		  stringResult = getString(R.string.noRoots);
 		}
 	  } else {
-		stringResult = "Coefficient a must be greater than zero";
+		stringResult = getString(R.string.zeroACoefficient);
 	  }
-	} catch (NullPointerException e) {
-	  stringResult = "Fill in all the fields";
+
+	  result.setText(stringResult);
+	}else{
+	  TextView result = findViewById(R.id.result);
+	  result.setText(getString(R.string.emptyFieldError));
 	}
-
-
-	result.setText(stringResult);
   }
-
 }
+
+
+
