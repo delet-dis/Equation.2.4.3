@@ -35,15 +35,26 @@ public class MainActivity extends AppCompatActivity {
 	double firstRoot;
 	double secondRoot;
 
-	String stringResult = "";
+	String stringResult;
 
-	if (discriminant > 0) {
-	  firstRoot = (-b + sqrt) / (2 * a);
-	  secondRoot = (-b - sqrt) / (2 * a);
-	  stringResult = "Roots are :: " + firstRoot + " and " + secondRoot;
-	} else if (discriminant == 0) {
-	  stringResult = "Root is :: " + (-b + sqrt) / (2 * a);
+	try {
+	  if (a > 0) {
+		if (discriminant > 0.0) {
+		  firstRoot = (-b + sqrt) / (2 * a);
+		  secondRoot = (-b - sqrt) / (2 * a);
+		  stringResult = "Roots are : " + firstRoot + " and " + secondRoot;
+		} else if (discriminant == 0) {
+		  stringResult = "Root is : " + (-b + sqrt) / (2 * a);
+		} else {
+		  stringResult = "No roots";
+		}
+	  } else {
+		stringResult = "Coefficient a must be greater than zero";
+	  }
+	} catch (NullPointerException e) {
+	  stringResult = "Fill in all the fields";
 	}
+
 
 	result.setText(stringResult);
   }
