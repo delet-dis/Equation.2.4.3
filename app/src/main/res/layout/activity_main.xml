@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="ru.samsung.itschool.book.equation243.MainActivity">
-
-    <TextView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="@string/title" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="ru.samsung.itschool.book.equation243.MainActivity">
 
-    <EditText
-            android:id="@+id/coefficient_a"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/a"
-            android:inputType="number"
-            android:importantForAutofill="no" />
+  <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/title"
+          android:textSize="24sp" />
 
-    <EditText
-            android:id="@+id/coefficient_b"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/b"
-            android:inputType="number"
-            android:importantForAutofill="no" />
+  <EditText
+          android:id="@+id/coefficient_a"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/a"
+          android:importantForAutofill="no"
+          android:inputType="number" />
 
-    <EditText
-            android:id="@+id/coefficient_c"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/c"
-            android:inputType="number"
-            android:importantForAutofill="no" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="solveEquation"
-        android:text="@string/calculate"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:id="@+id/result"/>
+  <EditText
+          android:id="@+id/coefficient_b"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/b"
+          android:importantForAutofill="no"
+          android:inputType="number" />
+
+  <EditText
+          android:id="@+id/coefficient_c"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="@string/c"
+          android:importantForAutofill="no"
+          android:inputType="number" />
+
+  <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:onClick="solveEquation"
+          android:text="@string/calculate" />
+
+  <TextView
+          android:id="@+id/result"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="24sp" />
 
 </LinearLayout>
