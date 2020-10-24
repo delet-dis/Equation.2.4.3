@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             double c = Double.parseDouble( ((EditText)
                     findViewById(R.id.coefficient_c)).getText().toString());
             TextView result = (TextView) findViewById(R.id.result);
-            result.setText("" + String.valueOf((c - b) / a));
+            result.setText("" + (c - b) / a);
         }
 
 }
