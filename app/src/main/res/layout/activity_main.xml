@@ -10,23 +10,32 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:text="@string/title" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/coefficient_a"
-        android:hint="@string/a"/>
+            android:id="@+id/coefficient_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/a"
+            android:inputType="number"
+            android:importantForAutofill="no" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/coefficient_b"
-        android:hint="@string/b"/>
+            android:id="@+id/coefficient_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/b"
+            android:inputType="number"
+            android:importantForAutofill="no" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/coefficient_c"
-        android:hint="@string/c"/>
+            android:id="@+id/coefficient_c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/c"
+            android:inputType="number"
+            android:importantForAutofill="no" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +44,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:id="@+id/result"/>
 
 </LinearLayout>
