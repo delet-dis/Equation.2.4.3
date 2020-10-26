@@ -8,7 +8,7 @@
   <string name="emptyFieldError">Поля не должны быть пустыми</string>
   <string name="zeroACoefficient">Коэффициент а должен быть больше нуля</string>
   <string name="noRoots">Корней нет</string>
-  <string name="rootsAre">Корни: </string>
-  <string name="and"> и </string>
-  <string name="rootIs">Корень: </string>
+  <string name="rootsAre">Корни:</string>
+  <string name="and">и</string>
+  <string name="rootIs">Корень:</string>
 </resources>

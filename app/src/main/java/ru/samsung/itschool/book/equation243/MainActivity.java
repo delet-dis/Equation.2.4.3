@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
   @Override
   public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	// Инициализирует Активность.
 	setContentView(R.layout.activity_main);
   }
 
@@ -41,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 		if (discriminant > 0.0) {
 		  firstRoot = (-b + sqrt) / (2 * a);
 		  secondRoot = (-b - sqrt) / (2 * a);
-		  stringResult = getString(R.string.rootsAre) + firstRoot + getString(R.string.and) + secondRoot;
+		  stringResult = getString(R.string.rootsAre) + " " + firstRoot + " " + getString(R.string.and) + " " + secondRoot;
 		} else if (discriminant == 0) {
-		  stringResult = getString(R.string.rootIs) + (-b + sqrt) / (2 * a);
+		  stringResult = getString(R.string.rootIs) + " " + (-b + sqrt) / (2 * a);
 		} else {
 		  stringResult = getString(R.string.noRoots);
 		}
