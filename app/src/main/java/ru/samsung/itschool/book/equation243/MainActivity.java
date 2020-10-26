@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-  // Вызывается при создании Активности
   @Override
   public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
@@ -16,11 +15,8 @@ public class MainActivity extends AppCompatActivity {
 	setContentView(R.layout.activity_main);
   }
 
-  /**
-   * Вызывается при нажатии пользователем на кнопку Решить
-   */
   public void solveEquation(View view) {
-	// ax+b=c
+
 	if (!((EditText) findViewById(R.id.coefficient_a)).getText().toString().isEmpty() &&
 			!((EditText) findViewById(R.id.coefficient_b)).getText().toString().isEmpty() &&
 			!((EditText) findViewById(R.id.coefficient_c)).getText().toString().isEmpty()) {
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 	  }
 
 	  result.setText(stringResult);
-	}else{
+	} else {
 	  TextView result = findViewById(R.id.result);
 	  result.setText(getString(R.string.emptyFieldError));
 	}
