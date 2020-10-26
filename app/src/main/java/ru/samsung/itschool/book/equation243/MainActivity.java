@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
    */
   public void solveEquation(View view) {
 	// ax+b=c
-	if (((EditText) findViewById(R.id.coefficient_a)).getText().toString().length() > 0 &&
-			((EditText) findViewById(R.id.coefficient_b)).getText().toString().length() > 0 &&
-			((EditText) findViewById(R.id.coefficient_c)).getText().toString().length() > 0) {
+	if (!((EditText) findViewById(R.id.coefficient_a)).getText().toString().isEmpty() &&
+			!((EditText) findViewById(R.id.coefficient_b)).getText().toString().isEmpty() &&
+			!((EditText) findViewById(R.id.coefficient_c)).getText().toString().isEmpty()) {
 
 	  double a = Double.parseDouble(((EditText)
 			  findViewById(R.id.coefficient_a)).getText().toString());
