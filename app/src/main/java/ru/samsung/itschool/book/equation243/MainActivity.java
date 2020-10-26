@@ -8,25 +8,34 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+  private EditText coefA;
+  private EditText coefB;
+  private EditText coefC;
+  private TextView result;
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_main);
+
+	coefA = findViewById(R.id.coefficient_a);
+	coefB = findViewById(R.id.coefficient_b);
+	coefC = findViewById(R.id.coefficient_c);
+
+	result = findViewById(R.id.result);
   }
 
   public void solveEquation(View view) {
 
-	if (!((EditText) findViewById(R.id.coefficient_a)).getText().toString().isEmpty() &&
-			!((EditText) findViewById(R.id.coefficient_b)).getText().toString().isEmpty() &&
-			!((EditText) findViewById(R.id.coefficient_c)).getText().toString().isEmpty()) {
+	if (!coefA.getText().toString().isEmpty() &&
+			!coefB.getText().toString().isEmpty() &&
+			!coefC.getText().toString().isEmpty()) {
 
-	  double a = Double.parseDouble(((EditText)
-			  findViewById(R.id.coefficient_a)).getText().toString());
-	  double b = Double.parseDouble(((EditText)
-			  findViewById(R.id.coefficient_b)).getText().toString());
-	  double c = Double.parseDouble(((EditText)
-			  findViewById(R.id.coefficient_c)).getText().toString());
-	  TextView result = findViewById(R.id.result);
+	  double a = Double.parseDouble(coefA.getText().toString());
+	  double b = Double.parseDouble(coefB.getText().toString());
+	  double c = Double.parseDouble(coefC.getText().toString());
+
 
 	  double discriminant = Math.pow(b, 2) - 4 * a * c;
 	  double sqrt = Math.sqrt(discriminant);
@@ -52,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
 	  result.setText(stringResult);
 	} else {
-	  TextView result = findViewById(R.id.result);
 	  result.setText(getString(R.string.emptyFieldError));
 	}
   }
